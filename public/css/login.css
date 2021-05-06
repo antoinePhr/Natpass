@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(0, 0, 0, .4);
+}
+label{
+    display: block;
+    font-size: 1.4em;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+i{
+    margin-right: 20px;
+}   
+input{
+    height: 100%;
+    border: none;
+    box-shadow: none;
+    font-size: 1.4em;
+    font-family: 'MontSerrat', sans-serif;
+    background-color: transparent !important;
+    border-bottom: 1px solid gray;
+}
+::placeholder{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: .8em;
+}
+.loginContainer{
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgb(0 0 20 / 60%);
+    position: absolute;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80vh;
+    width: 40vw;
+}
+.formLogin{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.formLogin>h1{
+    text-align: center;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    padding-top: 100px;
+    font-weight: bold;
+}
+
+
+.formLogin > form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 35%;
+    height: 55%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.passwd, .pseudo{
+    width: 50%;
+    display: flex;
+    align-content: center;
+}
+
+
+.pseudo>label, .passwd>label{
+    margin-bottom: 15px;
+}
+.buttonContainer{
+    margin-top: 50px;
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.createAccount{
+    font-size: 13px;
+    text-decoration: underline;
+    font-size: italic;
+    background-color: transparent;
+    font-family: 'MontSerrat', sans-serif;
+}
+
+button.loginBTN{
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    background-color: #129AE2;
+    display: block;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    color: white;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+.movieFootage{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+.movieFootage>video{
+    width: 100%;
+    filter: blur(5px);
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.3);
+}
+
+
+/* ---- RESPONSIVE SECTION ----- */
+
+@media screen and (max-width: 1200px){
+    .pseudo, .passwd{
+        width: unset;   
+    }   
+}
+@media screen and (max-width: 900px){
+    .pseudo>input,
+    .passwd>input{
+        font-size: 1.2em;
+    }
+    .loginContainer{
+        width: 90%;
+    }   
+}
+
+@media screen and (max-width: 500px){
+    .formLogin>h1{
+        padding-top: 70px;
+    }
+    .pseudo>input,
+    .passwd>input{
+        font-size: 4vw;
+    }
+    .buttonContainer{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .createAccount{
+        margin-top: 10px;
+    }
+}

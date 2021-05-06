@@ -1,0 +1,132 @@
+.lessonContainer{
+    margin-top: 50px;
+    padding: 50px 0px 50px 50px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+.lesson{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lessonVideo{
+    width: 60%;
+}
+.titleContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.lessonVideo>.titleContainer>h1{
+    text-align: left;
+    font-size: 1.4em;
+    margin: 5px 0px 15px 0px;
+}
+.lessonInfo{
+    position: relative;
+    padding: 1% 1% 1% 3%;
+    width: 40%;
+    background-color: rgba(18, 154, 226, 0.10) ;
+}
+.lessonInfo>h3{
+    font-size: 1.1em;
+    text-transform: capitalize;
+}
+.lessonInfo>p{
+    padding: 20px;
+    font-size: 0.8em;
+    text-align: justify;
+}
+.lessonAnalyse{
+    margin-top: 25px;
+}
+.lessonAnalyse>h3{
+    font-size: 1.1em;
+    text-transform: capitalize;
+}
+.lessonAnalyse>p{
+    padding: 20px;
+    font-size: 0.8em;
+}
+.tags{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+.tags>ul{
+    font-size: 12px;
+    display: flex;
+}
+.tags>ul>li{
+    margin-right: 15px;
+}
+.tags>ul>li:last-child{
+    margin-right: 0px;
+}
+
+.lessonContainer>hr{
+    margin-top: 10px;
+    height: 2px;
+    background-color: #e4e4e4;
+    border: none;
+}
+
+.favIcon{
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+}
+.favIcon>img{
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+    transform: translate(-50%, -50%);
+    transition: top .3s ease-in-out;
+}
+.favIcon>img:hover{
+    top: 20px;
+}
+.favIcon>img.active{
+    display: block;
+    animation: bump .3s cubic-bezier(.59,.26,.53,1.32);
+}
+
+@keyframes bump{
+    50%{
+        transform: scale(1.1) translate(-50%, -50%);
+    }
+}
+
+@media screen and (min-width: 1010px) and (max-width: 1260px) {
+
+}
+
+@media screen and (max-width: 1010px){
+    .titleContainer, .tags{
+        padding-left: 10px;
+    }
+
+}
+
+
+@media screen and (max-width: 1260px){
+    .lessonContainer{
+        padding: 0px;
+        margin: 25px 0px 0px 0px;
+    }
+    .lesson{
+        flex-direction: column;
+        align-items: initial;
+    }
+    .favIcon{
+        margin-right: 25px;
+    }
+    .lessonVideo{
+        width: 100%;
+    }
+    div.lessonInfo{
+        margin-top: 25px;
+        width: 100%;
+    }
+}

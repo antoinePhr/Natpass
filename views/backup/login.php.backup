@@ -1,0 +1,64 @@
+<?php
+session_start();
+
+use \Antoine\Database;
+
+require_once '../src/Database.php';
+require '../components/previous.php';
+$pageTitle = "se connecter";
+$styleSheetBis = "css/login.css";
+$scriptJS = "js/script.js";
+
+if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
+    header('Location:' . $router->generate("home"));
+    $_SESSION['AC'] = "<h1 class='alreadyConnected'> Vous êtes déjà connecté </h1>";
+}
+
+if (isset($_POST['submit']) && !empty($_POST['pseudoSubmit'])) {
+    $conn = new Database('natpass');
+    $params = [];
+    $username = htmlspecialchars($_POST['pseudoSubmit']);
+    $pass = htmlspecialchars($_POST['passwdSubmit']);
+    array_push($params, $username);
+    $result = $conn->queryMultipleValue("SELECT mbr_mail, mbr_passwd, mbr_imgProfil, mbr_id FROM membre WHERE mbr_mail = ?", $params);
+    if ($result) {
+        if (password_verify($pass, $result[0]->mbr_passwd)) {
+            $_SESSION['imgProfil'] = $result[0]->mbr_imgProfil;
+            $_SESSION['username'] = $result[0]->mbr_name;
+            $_SESSION['usr_id'] = $result[0]->mbr_id;
+            $_SESSION['global'] = $result[0];
+            $_SESSION['login'] = true;
+            header("Location: " . $router->generate('home'));
+        } else {
+            $err = "mot de passe ou nom d'utilisateur incorrect";
+        }
+    } else {
+        $err = "Utilisateur introuvable";
+    }
+}
+
+?>
+<div class="movieFootage">
+    <video src="./img/backgroundLog.mp4" autoplay muted loop>
+    </video>
+</div>
+<div class="loginContainer">
+    <div class="formLogin">
+        <h1>connexion</h1>
+        <form action="<?= $router->generate('login') ?>" method="POST">
+            <div class="pseudo">
+                <i class="fas fa-user fa-2x"></i>
+                <input required name="pseudoSubmit" type="text" placeholder="entrer votre pseudo">
+            </div>
+            <div class="passwd">
+                <i class="fas fa-key fa-2x"></i>
+                <input required name="passwdSubmit" type="password" placeholder="entrer votre mot de passe">
+            </div>
+            <p><?= $err ?? "" ?></p>
+            <div class="buttonContainer">
+                <button class="loginBTN" name="submit" type="submit">connexion</button>
+                <button class="createAccount"> <a href="">ou créer un compte</a></button>
+            </div>
+        </form>
+    </div>
+</div>

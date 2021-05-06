@@ -1,0 +1,305 @@
+/*IMPORT FONT*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+  color: unset;
+}
+h1 {
+  font-weight: 900;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+div {
+  flex-wrap: wrap;
+}
+
+footer {
+  height: 80px;
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+footer > p {
+  color: white;
+}
+
+button {
+  box-shadow: none;
+  border: none;
+}
+
+.filterBlur {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(5px);
+}
+
+nav.nav {
+  z-index: 2;
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo > img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.nav > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.nav > ul > li {
+  font-weight: bold;
+  color: white;
+  border-radius: 30px;
+  transition: background-color 0.3s ease-in-out;
+  margin-right: 20px;
+}
+.nav > ul > li:last-child {
+  margin-right: 0px;
+}
+.nav > ul > li.active {
+  padding: 10px 15px;
+  background-color: #5b88fd;
+}
+
+.homeSection {
+  background-image: url("/img/background.jpg");
+  background-position: center;
+  background-size: cover;
+
+  height: 100vh;
+  width: 100%;
+  color: white;
+}
+.homeSection > .homeInfo {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+.homeInfo > .homeTitle {
+  font-weight: bold;
+  font-size: 8em;
+  border-bottom: 2px solid white;
+  text-transform: uppercase;
+}
+.homeInfo > p {
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+
+.blackFilter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*PARTIE HOME PAGE CONTENT*/
+.homePageContent {
+  width: 100%;
+}
+
+.homePageContent > div {
+  padding: 95px;
+}
+.presentation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.presentation > img {
+  width: 40%;
+  border-radius: 20px;
+}
+.presentation > .paraPresentation {
+  width: 50%;
+  padding: 10px;
+}
+
+.paraPresentation > h1,
+.findUsText > h1,
+.crawlInfo > h1,
+.brasseInfo > h1,
+.discoverAllCourse > h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #5b88fd;
+}
+.paraPresentation > p,
+.findUsText > p,
+.crawlInfo > p,
+.brasseInfo > p {
+  padding: 15px 0px;
+  text-align: justify;
+}
+
+/*maps google SECTION FINDUS*/
+.findUs {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+.filterFind {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-image: url("/img/fondFind.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  left: 0;
+}
+.whiteFilter {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.findUsText {
+  z-index: 1;
+  width: 40%;
+}
+.findUsInfo {
+  color: #5b88fd;
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.tel,
+.mail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tel > i,
+.mail > i {
+  margin-right: 15px;
+}
+
+.maps {
+  width: 50%;
+  height: 400px;
+}
+
+/*partie dcrawlvideo*/
+.homeCrawl {
+  background-image: url("/img/fondG.jpg");
+  background-position: center;
+  background-size: cover;
+
+  background-attachment: fixed;
+}
+.homeCrawl,
+.homeBrasse {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+.homeBrasse {
+  flex-direction: row;
+}
+
+.homeCrawl > .crawlVid,
+.homeBrasse > .brasseVid {
+  width: 50%;
+}
+.crawlVid > video,
+.brasseVid > video {
+  width: 100%;
+}
+
+.crawlInfo,
+.brasseInfo {
+  width: 40%;
+}
+
+/*partie exemple video*/
+.expCourseContainer {
+  position: relative;
+}
+
+.exempleCourse {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.exempleCourse > div {
+  width: 25%;
+  min-width: 250px;
+  height: 350px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.exempleCourse > div:hover {
+  transform: scale(1.1);
+}
+.exempleCourse > div > h2:hover {
+  text-decoration: underline;
+}
+
+.exempleCourse > div > h2 {
+  z-index: 1;
+  color: white;
+  text-transform: uppercase;
+}
+
+.ex1 {
+  background-image: url("/img/brasse.jpg");
+}
+.ex2 {
+  background-image: url("/img/crawl.jpg");
+}
+.ex3 {
+  background-image: url("/img/papillon.jpg");
+}
+.ex4 {
+  background-image: url("/img/dosCrawl.jpg");
+}
